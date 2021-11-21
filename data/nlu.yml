@@ -1,0 +1,75 @@
+version: "2.0"
+
+nlu: 
+  - intent: papofurado/cumprimento
+    examples: |
+      - Bom dia
+      - Boa tarde
+      - Boa noite
+      - Olá
+      - Oi
+      - Tudo bem?
+  - intent: papofurado/adeus
+    examples: |
+      - Tchau
+      - Adeus
+      - Até logo
+      - Até breve
+      - Um abraço
+      - Obrigado
+  - intent: papofurado/funcionalidades
+    examples: |
+      - Pra que você serve?
+      - O que você faz?
+      - Como você funciona?
+      - Como você pode me ajudar?
+      - Mais informações
+      - Estou com dúvida
+  - intent: cotacao
+    examples: |
+      - Qual a cotação do [Dólar Americano](moeda)
+      - Qual a cotação do [Dólar Australiano](moeda)
+      - Qual a cotação do [Iene Japonês](moeda)
+      - Qual a cotação do [Peso Argentino](moeda)
+      - Qual a cotação de hoje?
+      - Qual a cotação do [dólar](moeda) hoje?
+      - Qual o preço do [dólar](moeda)?
+      - Qual o valor da moeda hoje?
+      - Quanto vale o real?
+      - Quero fazer uma cotação
+      - Quero saber a cotação
+  - intent: lista_moeda
+    examples: |
+      - Lista de conversão
+      - Lista de moedas
+      - Quais moedas você faz cotação?
+      - Qual a lista das moedas que eu posso cotar?
+  - intent: cancelar
+    examples: |
+      - quero cancelar
+      - desejo cancelar
+      - cancelar minha cotação
+      - não quero mais fazer a cotação
+  - synonym: Dólar Americano
+    examples: |
+      - dólar americano
+      - dolar americano
+      - dolar
+      - dólar
+  - synonym: Dólar Australiano
+    examples: |
+      - dólar australiano
+      - dolar australiano
+  - synonym: Iene Japonês
+    examples: |
+      - iene japonês
+      - eene japones
+      - iene
+  - synonym: Libra Esterlina
+    examples: |
+      - libra esterlina
+      - libra
+  - synonym: Peso Argentino
+    examples: |
+      - peso argentino
+      - peso

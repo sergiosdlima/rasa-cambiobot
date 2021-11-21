@@ -1,0 +1,60 @@
+version: "2.0"
+
+intents:
+  - cotacao
+  - lista_moeda
+  - papofurado
+  - cancelar
+  - nlu_fallback
+
+entities:
+  - moeda
+
+responses:
+  utter_papofurado/cumprimento:
+    - text: "Olá!"
+    - text: "Oi!"
+
+  utter_papofurado/adeus:
+    - text: "Até breve!"
+    - text: "Até logo."
+
+  utter_papofurado/funcionalidades:
+    - text: "Eu sou um robô com expertise em conversão de moedas capaz de dar informações de cotação de mais de 30 moedas comparadas ao real brasileiro."
+
+  utter_lista_moeda:
+    - text: "Eu verifico a cotação das principais moedas do mundo, como por exemplo, o Dólar Americano, Euro, Libra Esterlina, Iene Japonês, Dólar Australiano, Franco Suíço, Dólar Canadense, Peso Argentino, Bitcoin e Yuan Chinês para citar alguns.\nQual moeda você gostaria de fazer uma cotação?"
+
+  utter_fallback:
+    - text: "Não entendi sua pergunta, pode reformular?"
+    - text: "Você pode reformular sua afirmação? Eu não estou entendendo."
+
+  utter_ask_moeda:
+    - text: "Qual moeda deseja cotar?"
+
+  utter_envio_cotacao:
+    - text: "Consultando o valor da moeda..."
+
+  utter_resultado_cotacao:
+    - text: "{resultado_cotacao}"
+
+  utter_cancelamento:
+    - text: "Tudo bem, estou cancelando..."
+
+slots:
+  moeda:
+    type: text
+    influence_conversation: false
+  resultado_cotacao:
+    type: text
+    influence_conversation: false
+
+forms:
+  cotacao_form:
+    moeda:
+      - type: from_entity
+        entity: moeda
+
+actions:
+  - action_clear_slots
+  - action_submit_cotacao
