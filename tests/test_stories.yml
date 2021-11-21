@@ -1,0 +1,41 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+version: "2.0"
+
+stories:
+- story: Teste simples de cotação
+  steps:
+  - user: |
+      oi
+    intent: papofurado/cumprimento
+  - action: utter_papofurado
+  - user: |
+      quero fazer uma cotação
+    intent: cotacao
+  # - action: utter_ask_moeda
+  - action: cotacao_form
+  - user: |
+      dólar
+    intent: cotacao
+  - action: cotacao_form
+  - action: utter_envio_cotacao
+  - action: action_submit_cotacao
+  - action: utter_resultado_cotacao
+  - user: |
+      obrigado
+    intent: papofurado/adeus
+  - action: utter_papofurado
+
+- story: Testa lista de moedas
+  steps:
+  - user: |
+      qual a lista de moedas?
+    intent: lista_moeda
+  - action: utter_lista_moeda
+
+- story: Testa sobre o bot
+  steps:
+  - user: |
+      O que você faz?
+    intent: papofurado/funcionalidades
+  - action: utter_papofurado
